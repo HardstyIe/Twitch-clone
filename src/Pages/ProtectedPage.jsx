@@ -1,12 +1,12 @@
 import { useContext } from "react";
-import { Redirect } from "react-router-dom";
+import { redirect } from "react-router-dom";
 import { AuthContext } from "../Contexts/AuthContext";
 
 const ProtectedPage = () => {
   const { isAuthenticated } = useContext(AuthContext);
 
   if (!isAuthenticated) {
-    return <Redirect to="/login" />;
+    redirect("/");
   }
 
   return <div>Contenu de la page protégée.</div>;
