@@ -2,7 +2,6 @@
   "name": "twitch-clone",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "tw": "npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch",
     "dev": "vite",
