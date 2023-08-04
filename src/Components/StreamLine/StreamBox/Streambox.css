@@ -1,0 +1,24 @@
+.stream-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+  /* Vous pouvez ajuster cette valeur */
+}
+
+.stream-tag {
+  padding: 0.2em 0.5em;
+  border-radius: 12px;
+  background-color: #f0f0f0;
+  margin-right: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.stream-user-name,
+.stream-game-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+  /* Vous pouvez ajuster cette valeur */
+}

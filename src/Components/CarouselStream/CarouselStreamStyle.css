@@ -1,0 +1,126 @@
+.twitch .twitch-button {
+  position: absolute;
+  top: 43%;
+  box-shadow: none;
+  border-radius: 5px;
+  width: 36px;
+  height: 36px;
+  background-color: transparent;
+}
+
+.twitch .twitch-button.right {
+  right: 0%;
+}
+
+.twitch .twitch-button.left {
+  left: 0%;
+}
+
+.react-stacked-center-carousel {
+  padding: 20px 0;
+}
+
+.twitch-card {
+  transition: all 300ms ease;
+  cursor: pointer;
+  display: flex;
+  width: 100%;
+  height: 255px;
+  position: relative;
+  background-color: #262626;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2), 0 0 4px rgba(0, 0, 0, 0.05);
+}
+
+.twitch-card:hover {
+  transform: scale(1.05);
+}
+
+.react-stacked-center-carousel-slide-0 .twitch-card {
+  cursor: default;
+}
+
+.react-stacked-center-carousel-slide-0 .twitch-card:hover {
+  transform: none;
+}
+
+.fill {
+  width: 100%;
+  height: 100%;
+}
+
+.twitch-card .card-overlay {
+  user-select: none;
+  position: absolute;
+  background-color: #00000099;
+  transition: all 300ms ease;
+}
+
+.twitch-card:hover .card-overlay {
+  background-color: #0000002d;
+}
+
+.react-stacked-center-carousel-slide-0 .card-overlay {
+  background-color: #00000099 !important;
+}
+
+.twitch-card .cover-image {
+  object-fit: cover;
+}
+
+.twitch-card .cover {
+  position: relative;
+  transition: opacity 300ms ease;
+  width: 70%;
+  height: 100%;
+}
+
+.react-stacked-center-carousel-slide-0 .twitch-card .cover {
+  transition: opacity 300ms ease, z-index 0ms 300ms;
+}
+
+.twitch-card .detail {
+  position: relative;
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  /* added some padding */
+}
+
+.twitch-card .video {
+  width: 70%;
+}
+
+.twitch-card .discription {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.twitch-card .avatar {
+  width: 60px;
+  height: 60px;
+  align-self: center;
+  margin-bottom: 10px;
+}
+
+.twitch-card p {
+  cursor: auto;
+  padding: 0 12px;
+  font-size: 14px;
+  line-height: 150%;
+}
+
+.twitch-card .username {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.twitch-card .description {
+  font-size: 14px;
+  margin-top: auto;
+  /* pushes the description to the bottom */
+}

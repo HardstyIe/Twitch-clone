@@ -1,5 +1,6 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import "./App.css";
+import Navbar from './Components/Navbar/Navbar';
 import { AuthProvider } from "./Contexts/AuthContext";
 import Homepage from "./Pages/Homepage";
 import Notfound from "./Pages/Notfound";
@@ -10,6 +11,7 @@ function App() {
   return (
     <AuthProvider>
       <Router>
+        <Navbar />
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/protected" element={<ProtectedPage />} />

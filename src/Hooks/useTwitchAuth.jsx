@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../Contexts/AuthContext';
 
 export function useTwitchAuth() {
-  const { authToken, setAuthToken, appAccessToken, setAppAccessToken } = useContext(AuthContext);
+  const { authToken, setAuthToken, appAccessToken, setAppAccessToken, authUser, setAuthUser } = useContext(AuthContext);
   const [isLoading, setIsLoading] = useState(true);
   const [expiresIn, setExpiresIn] = useState(null);
   const [initialized, setInitialized] = useState(false); // Ajouter une variable d'état pour indiquer si le composant est initialisé ou non
@@ -91,9 +91,29 @@ export function useTwitchAuth() {
     };
   }, [expiresIn, initialized]); // Déclencher le troisième useEffect à chaque changement de expiresIn et initialized
 
+
+  useEffect(() => {
+    if (authToken) {
+      fetch('https://api.twitch.tv/helix/users', {
+        headers: {
+          'Authorization': `Bearer ${authToken}`,
+          'Client-ID': import.meta.env.VITE_CLIENT_ID
+        }
+      })
+        .then(response => response.json())
+        .then(data => {
+          setAuthUser(data.data[0]); // Set user data here
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    }
+  }, [authToken]); // Trigger this effect whenever authToken changes
+
+
   if (isLoading) {
     return { isLoading };
   }
 
-  return { authToken, redirectToTwitchAuth, appAccessToken, setAppAccessToken, isLoading };
+  return { authToken, redirectToTwitchAuth, appAccessToken, setAppAccessToken, isLoading, authUser };
 }
